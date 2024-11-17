@@ -148,11 +148,11 @@ body {
 
 .sectionbanner div h2 {
     color: rgb(255, 255, 255);
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 200;
-    margin-top: 4vh;
+    margin-top: 12vh;
     margin-left: 5%;
-    width: 50vw;
+    width: 45vw;
 }
 
 p {
@@ -331,8 +331,13 @@ section .starpoint .material-symbols-outlined {
     font-size: 20px;
 }
 
-#contenedor-cards {
+.prueba {
 
+    width: 100%;
+}
+
+#contenedor-cards {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding: 0 5vw 100px 5vw;
@@ -603,7 +608,7 @@ footer {
 }
 
 .footer {
-    
+
     display: flex;
     align-items: first baseline;
     justify-content: space-around;
@@ -795,7 +800,7 @@ div .divpages button {
 .traetusprearmadas h3 {
     font-size: 50px;
     color: rgb(122, 197, 127);
-    padding: 10px;
+    padding: 3vw;
 }
 
 section .div2 p {
@@ -865,6 +870,7 @@ section .div4 p {
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+    padding: 5vw;
 
 }
 
@@ -873,6 +879,7 @@ section .div4 p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 5vw;
 }
 
 
@@ -898,7 +905,9 @@ section .div4-a ul {
     width: 20vw;
 }
 
-
+.videoyout {
+    width: 100%;
+}
 
 
 
@@ -934,6 +943,40 @@ section .div4-a ul {
         margin: 0 7vw 0.7vh 7vw;
         font-size: 1.5rem;
     }
+
+
+
+    .div1-a h1 {
+        margin-top: 200px;
+        justify-content: center;
+        font-size: 50px;
+        margin-bottom: 0;
+        margin: 0 5vw;
+    }
+
+    .div1-b {
+
+        width: 50vw;
+        margin-top: 70px;
+    }
+
+    .div2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5vw;
+    
+    }
+    .traetusprearmadas h3 {
+        font-size: 45px;
+       padding: 0;
+        color: rgb(122, 197, 127);
+        
+    }
+
+    
+    
 
 }
 
@@ -978,6 +1021,31 @@ section .div4-a ul {
         padding: 10px;
         border-radius: 10px;
     }
+
+    .div1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 100px;
+        margin-top: 80px;
+    }
+
+    .div1-a h1 {
+        margin-top: 200px;
+        justify-content: center;
+        font-size: 50px;
+        margin-bottom: 0;
+        margin: 0 5vw;
+    }
+
+    .div1-b {
+
+        width: 50vw;
+        margin-top: 60px;
+    }
+
+    
+
 }
 
 @media (max-width:1024px) {
@@ -997,6 +1065,88 @@ section .div4-a ul {
         width: 40vw;
     }
 
+    .div1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .div1-a {
+        width: 100vw;
+
+    }
+
+    .div1-b {
+        width: 100vw;
+        margin-top: 50px;
+    }
+
+    .div1-a h1 h2 {
+        width: 100%;
+        justify-content: center;
+        
+        font-size: 50px;
+    }
+
+    .div1-b {
+
+        width: 50vw;
+        margin-top: 60px;
+    }
+
+
+    .div2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5vw;
+    
+    }
+    .traetusprearmadas h3 {
+        font-size: 45px;
+       padding: 0;
+        color: rgb(122, 197, 127);
+        
+    }
+
+    
+    .div3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    
+    }
+    
+    .div3-a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 30vh;
+        width: 100vw;
+        padding: 50px;
+        box-shadow: 0 6px 4px rgba(253, 253, 253, 0.1);
+        
+    
+    
+    }
+    
+    .div3-b {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 30vh;
+        width: 100vw;
+        padding: 50px;
+        box-shadow: 0 6px 4px rgba(253, 253, 253, 0.1);
+    }
+
 }
 
 @media (max-width:1000px) {
@@ -1014,6 +1164,19 @@ section .div4-a ul {
         top: 220px;
         margin-left: 5%;
         width: 40vw;
+    }
+
+    .suscripcion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 100px;
+    }
+    
+    .textsuscripcion {
+        margin: 20px;
+        padding: 1vw;
     }
 
 }
@@ -1102,8 +1265,9 @@ section .div4-a ul {
         border-radius: 20px;
 
     }
+
     .footer {
-    
+
         display: flex;
         flex-direction: column;
         align-items: first baseline;
