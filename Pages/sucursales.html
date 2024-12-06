@@ -14,7 +14,7 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="./img/favicon-32x32.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/global.css">
 </head>
 
 <body>
@@ -43,7 +43,7 @@
                                 <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="../Pages/hombre.html">Mujer</a>
+                                <a class="nav-link active" aria-current="page" href="../Pages/mujer.html">Mujer</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="../Pages/hombre.html">Hombre</a>
@@ -53,8 +53,7 @@
                                     ropa</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page"
-                                    href="#">Sucursales</a>
+                                <a class="nav-link active" aria-current="page" href="#">Sucursales</a>
                             </li>
 
                         </ul>
@@ -89,75 +88,78 @@
             <h1>Sucursales</h1>
             <h2>¡Descubrí tu sucursal más cercana!</h2>
         </div>
-        <div>
-            <div class="ubicaciones">
-                <div class="divubicacion">
-                    <p>Chennai (India)</p>
-                    <span class="material-symbols-outlined">
-                        location_on
-                    </span>
-                </div>
-                <div class="direccion">
-                    <p>AVA</p>
-                    <p>277, Lorem Road, Ayanavaram
-                        Chennai 600023, Tamil Nadu, India</p>
-                </div>
-            </div>
-            <div class="ubicaciones">
-                <div class="divubicacion">
-                    <p>California (United States)</p>
-                    <span class="material-symbols-outlined">
-                        location_on
-                    </span>
-                </div>
-                <div class="direccion">
-                    <p>AVA</p>
-                    <p>9263 Regents Road
-                        La Jolla CA 92037-9166, USA</p>
-                </div>
-            </div>
-            <div class="ubicaciones">
-                <div class="divubicacion">
-                    <p>Sydney (Australia)</p>
-                    <span class="material-symbols-outlined">
-                        location_on
-                    </span>
-                </div>
-                <div class="direccion">
-                    <p>AVA</p>
-                    <p>23 Julian Place,Sydney, 2159
-                        Australia</p>
-                </div>
-            </div>
-            <div class="ubicaciones">
-                <div class="divubicacion">
-                    <p>Melbourne</p>
-                    <span class="material-symbols-outlined">
-                        location_on
-                    </span>
-                </div>
-                <div class="direccion">
-                    <p>AVA</p>
-                    <p>28 Marple Avenue,Melbourne, 2163
-                        Australia</p>
-                </div>
-            </div>
-        </div>
-        <form class="divformcont">
-            <h5>Contactanos</h5>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
+
+        <div class="ubiform">
             <div>
-                <input type="submit" value="Enviar">
+                <div class="ubicaciones">
+                    <div class="divubicacion">
+                        <p>Chennai (India)</p>
+                        <span class="material-symbols-outlined">
+                            location_on
+                        </span>
+                    </div>
+                    <div class="direccion">
+                        <p>AVA</p>
+                        <p>277, Lorem Road, Ayanavaram
+                            Chennai 600023, Tamil Nadu, India</p>
+                    </div>
+                </div>
+                <div class="ubicaciones">
+                    <div class="divubicacion">
+                        <p>California (United States)</p>
+                        <span class="material-symbols-outlined">
+                            location_on
+                        </span>
+                    </div>
+                    <div class="direccion">
+                        <p>AVA</p>
+                        <p>9263 Regents Road
+                            La Jolla CA 92037-9166, USA</p>
+                    </div>
+                </div>
+                <div class="ubicaciones">
+                    <div class="divubicacion">
+                        <p>Sydney (Australia)</p>
+                        <span class="material-symbols-outlined">
+                            location_on
+                        </span>
+                    </div>
+                    <div class="direccion">
+                        <p>AVA</p>
+                        <p>23 Julian Place,Sydney, 2159
+                            Australia</p>
+                    </div>
+                </div>
+                <div class="ubicaciones">
+                    <div class="divubicacion">
+                        <p>Melbourne</p>
+                        <span class="material-symbols-outlined">
+                            location_on
+                        </span>
+                    </div>
+                    <div class="direccion">
+                        <p>AVA</p>
+                        <p>28 Marple Avenue,Melbourne, 2163
+                            Australia</p>
+                    </div>
+                </div>
             </div>
-        </form>
-        
+            <form class="divformcont">
+                <h5>Contactanos</h5>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Consulta</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Enviar">
+                </div>
+            </form>
+        </div>
 
         <!-- Sección Suscripción -->
         <section>
@@ -180,7 +182,7 @@
             <div>
                 <img class="imglaura1" src="../img/logoblanco.png" alt="logo laura posada">
             </div>
-            <div>
+            <div class="conttextfooter">
                 <h6>Más sobre Laura posada</h6>
                 <a href="">Sucursales y horarios</a>
                 <a href="">¡Vendé tu ropa!</a>
@@ -188,12 +190,12 @@
                 <a href="">Gift Cards</a>
             </div>
 
-            <div>
+            <div class="conttextfooter">
                 <h6>Términos y condiciones</h6>
                 <a href="">Políticas de devolución</a>
             </div>
 
-            <div>
+            <div class="conttextfooter">
                 <h6>Comunicate con nosotros</h6>
                 <a href="">543543207665</a>
                 <a href="">+54 9 3543 20-7665</a>
@@ -206,8 +208,8 @@
                 <p>Copyright Laura Posada Estilo - 33715792759 - 2024. Todos los derechos reservados.</p>
             </div>
             <div class="redes">
-                <a href=""><img src="../img/face.png" alt="icono facebook"></a>
-                <a href=""><img src="../img/insta.png" alt="icono instagram"></a>
+                <a class="iconredes" href=""><img src="../img/face.png" alt="icono facebook"></a>
+                <a class="iconredes" href=""><img src="../img/insta.png" alt="icono instagram"></a>
             </div>
         </div>
     </footer>

@@ -1,0 +1,1537 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+// Variables
+$navbar-bg: transparent;
+$header-bg: #ffffff;
+$footer-bg: #333;
+$text-color: black;
+$secondary-color: #317d24;
+$primary-color: #f3f3f3;
+$border-color: #eaeaea;
+$font-family-main: "Lexend", sans-serif;
+$font-family-serif: "Newsreader", serif;
+$font-size-base: 16px;
+$font-size-large: 50px;
+$font-size-small: 12px;
+$padding-default: 10px;
+
+
+// Mixins
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+  box-shadow: $shadow;
+}
+
+@mixin padding($value) {
+  padding: $value;
+}
+
+// Navbar Styles
+.navbar {
+  background-color: $navbar-bg !important;
+
+  .heart,
+  .user {
+    background: none !important; // Eliminar fondo de los iconos "heart" y "user"
+  }
+}
+
+// Nav
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  padding: 10px 20px; // Un poco de relleno en la nav para mejorar la apariencia
+
+  ul {
+    margin-bottom: 0;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none; // Eliminar los puntos de la lista
+
+    li {
+      transition: transform 0.3s ease, opacity 0.3s ease; // Animación suave para li
+
+      &:hover {
+        transform: scale(1.1); // Aumentar el tamaño ligeramente
+        opacity: 0.8; // Añadir efecto de desvanecimiento
+      }
+    }
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease; // Transición para los botones
+
+    &:hover {
+      transform: scale(1.1); // Aumentar tamaño del botón
+      color: #317d24; // Cambiar color al pasar el mouse
+    }
+  }
+
+  // Efecto para los enlaces de la lista
+  ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      color: #317d24; // Cambiar color del enlace al pasar el mouse
+      transform: scale(1.05); // Pequeño aumento de tamaño en los enlaces
+    }
+  }
+}
+
+// Footer 
+.footer {
+  background-color: $footer-bg;
+  color: white;
+  width: 100%;
+  display: flex;
+  align-items: first baseline;
+  justify-content: space-around;
+  padding: 40px 0; // Espaciado superior e inferior
+
+  .imglaura1 {
+    width: 120px;
+  }
+
+  .conttextfooter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px; // Espaciado entre cada sección
+
+    h6 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      margin-bottom: 8px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $secondary-color; // Cambio de color en hover
+      }
+    }
+  }
+}
+
+// Copiright and social icons section
+.copiredes {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $footer-bg;
+  color: white;
+  padding: 20px 50px;
+
+  p {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .redes {
+    display: flex;
+    gap: 15px;
+
+    .iconredes {
+      display: inline-block;
+
+      img {
+        width: 25px;
+        height: 25px;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 0.7; // Efecto en hover para iconos
+        }
+      }
+    }
+  }
+}
+
+// Index
+
+// Header
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  background-color: $header-bg;
+  z-index: 100;
+
+  a img {
+    align-items: center;
+    padding: $padding-default;
+    margin-left: 40px;
+  }
+
+  .imglaura {
+    width: 150px;
+  }
+}
+
+// Main Section Styles
+.sectionbanner {
+  position: relative;
+
+  h1 {
+    position: absolute;
+    top: 200px;
+    left: 150px;
+    z-index: 1000;
+  }
+
+  h2 {
+    position: absolute;
+    top: 400px;
+    left: 150px;
+    z-index: 1000;
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+    margin-top: 10px;
+    margin-left: 50px;
+    width: 800px;
+  }
+
+  div h1 {
+    font-family: $font-family-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 4vw;
+    color: white;
+    margin-left: 5%;
+    width: 50vw;
+  }
+
+  div h2 {
+    color: white;
+    font-size: 25px;
+    font-weight: 200;
+    margin-top: 12vh;
+    margin-left: 5%;
+    width: 45vw;
+  }
+}
+
+// Sección Beneficios
+.beneficios {
+  display: flex;
+  justify-content: center; // Centra los elementos horizontalmente
+  align-items: center; // Centra los elementos verticalmente
+  margin-top: 100px;
+  margin-bottom: 100px;
+  gap: 20px; // Espacio entre los elementos de beneficios
+  flex-wrap: wrap; // Permite que los elementos se ajusten a varias filas si es necesario
+  padding: 20px; // Espaciado dentro de la sección
+  border-radius: 15px; // Bordes redondeados
+}
+
+// Estilo para cada beneficio dentro de la sección
+.beneficio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #f3f3f3; // Borde alrededor de cada beneficio
+  width: 300px; // Ancho fijo para los beneficios
+  border-radius: 15px; // Bordes redondeados para los beneficios
+  background-color: #ffffff; // Fondo blanco para los beneficios
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Sombra sutil para los beneficios
+}
+
+.iconbeneficios {
+  transform: scale(2);
+  padding-right: 20px !important;
+}
+
+// Categorías 
+.opciones {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 100px;
+
+  .pad-top {
+    margin-top: 100px;
+  }
+}
+
+.categorias {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 100px;
+  transition: transform 0.5s ease-in-out;
+  /* Transición para el movimiento suave */
+  transform: translateY(20px);
+  /* Empieza ligeramente hacia abajo */
+
+  &:hover {
+    transform: translateY(0);
+    /* Se mueve a su posición original al pasar el ratón */
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    /* Transición para el efecto de imagen */
+  }
+
+  .textimg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    /* Comienza ligeramente pequeño */
+    color: #f3f3f3;
+    font-size: 40px;
+    filter: drop-shadow(0px 0px 5px black);
+    border-radius: 20px;
+    text-align: center;
+    letter-spacing: 5px;
+    opacity: 0;
+    /* Inicialmente invisible */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Transición suave para las imágenes y el texto */
+  }
+
+  &:hover .textimg {
+    opacity: 1;
+    /* Se hace visible al pasar el ratón */
+    transform: translate(-50%, -50%) scale(1);
+    /* Aumenta de tamaño */
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+    /* Aumenta el tamaño de la imagen al pasar el ratón */
+  }
+}
+
+// Cards - Grid Layout
+#prueba {
+  width: 100%; // Garantiza que el contenedor no se salga del 100% del ancho disponible
+  margin-bottom: 10vh;
+
+
+  .texto-descuentos-vertodo {
+    background-color: $primary-color;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 2vw 0 2vw;
+    padding: 5px 20px;
+
+    p {
+      font-size: 25px;
+      margin-bottom: 0;
+    }
+  }
+
+  .vertodo {
+    border: 1px solid #333;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  #contenedor-cards {
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2vh 2vw 2vh 2vw;
+    box-sizing: border-box; // Incluir padding dentro del tamaño del contenedor
+
+
+    .cards {
+      background-color: $primary-color;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      /* Animación de transformación y sombra */
+
+      /* Animación hover - elevar la card */
+      &:hover {
+        transform: translateY(-5px);
+        /* Eleva la card */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        /* Aumenta la sombra al hacer hover */
+      }
+
+      .heart {
+        transform: scale(1.5);
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        background-color: #ffffff;
+        border-radius: 20px;
+      }
+
+      .cardbot {
+        display: flex;
+        justify-content: space-around;
+
+        .starpoint {
+          display: flex;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}
+
+// Sección Suscripción
+.suscripcion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 100px;
+
+  .textsuscripcion {
+    margin-bottom: 20px;
+    text-align: center;
+
+    h5 {
+      font-size: 30px;
+      color: #333;
+      font-weight: 300;
+    }
+
+    p {
+      font-size: 16px;
+      color: #666;
+      font-weight: 300;
+    }
+  }
+
+  .entradatsuscripcion {
+    display: flex;
+    justify-content: center;
+    gap: 15px; // Espaciado entre los elementos
+
+    input {
+      padding: 15px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: $secondary-color; // Cambio de borde al hacer focus
+      }
+    }
+
+    button {
+      background-color: $secondary-color;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($secondary-color, 10%); // Efecto hover en el botón
+      }
+    }
+  }
+}
+
+// Hombre
+
+.portadasectionmujer {
+
+  .imgportmujer {
+    width: 100%;
+  }
+}
+
+
+// Mujer
+
+.portadasectionmujer {
+
+  .imgporthombre {
+    width: 100%;
+  }
+}
+
+.divh1mujer {
+  text-align: center;
+  margin-top: 40px;
+
+  h1 {
+    font-family: $font-family-serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: $text-color;
+  }
+}
+
+.divcategoria {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 20px;
+  margin-left: 2vw;
+
+
+  p {
+    color: $text-color;
+    margin-bottom: 0;
+    padding: 5px;
+    font-size: 1.4rem;
+  }
+
+  .material-symbols-outlined {
+    color: $footer-bg;
+  }
+}
+
+.cantproductosgen {
+  margin: 0 35px;
+  background-color: #eaeaea;
+  margin-bottom: 50px;
+  border: 2px solid rgb(223, 223, 223);
+  border-radius: 15px;
+
+  .cantproductos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+
+
+    p {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+
+    .ordenar {
+      display: flex;
+      gap: 15px;
+
+      button {
+        padding: 5px 10px;
+        font-size: 14px;
+        background-color: $header-bg;
+        color: $text-color;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          color: $primary-color;
+          background-color: darken($secondary-color, 10%);
+        }
+      }
+    }
+  }
+}
+
+// Filtros - Sección izquierda
+
+.divgeneral {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  /* Permite que los elementos se ajusten en pantallas más pequeñas */
+  padding: 20px;
+
+  .divizq {
+    flex: 1 1 10%;
+    /* Ocupa el 10% del ancho de la pantalla */
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    /* Inicialmente oculta para la animación */
+    transform: translateX(-50px);
+    /* Empuja el contenido hacia la izquierda */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: slideIn 0.7s forwards;
+    /* Animación de entrada */
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+        /* Empuja desde la izquierda */
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+        /* Mueve al lugar original */
+      }
+    }
+
+    .titfiltros {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #333;
+      /* Mejor contraste */
+    }
+
+    .gencategorias {
+      .titcat {
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #444;
+        /* Color más suave */
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #317d24;
+          /* Efecto hover en color */
+        }
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 10px;
+        color: #555;
+      }
+
+      div {
+        margin-bottom: 15px;
+
+        label {
+          font-size: 14px;
+          color: #666;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #317d24;
+            /* Efecto hover en label */
+          }
+        }
+
+        input[type="checkbox"] {
+          margin-right: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: #f5f5f5;
+      /* Fondo al pasar el ratón */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      /* Sombra para destacar */
+      transform: translateX(10px);
+      /* Desplazamiento al pasar el mouse */
+    }
+  }
+
+  .divder {
+    flex: 1 1 80%;
+    /* Ocupa el 80% del ancho de la pantalla */
+    box-sizing: border-box;
+
+    #contenedor-cards-mujer {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      /* 5 cards por fila */
+      gap: 20px;
+      width: 100%;
+      padding: 0;
+    }
+
+    .cards {
+      background-color: #f3f3f3;
+      /* Fondo claro para las cards */
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      position: relative;
+
+      .heart {
+        background: #ffffff;
+        position: absolute;
+        top: 1vw;
+        left: 1vw;
+        border-radius: 2vw;
+        padding: 0.2vw;
+      }
+
+      .imgcard {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .cardbot {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+
+
+        p {
+          font-size: 14px;
+          margin: 0;
+        }
+
+        .starpoint {
+          display: flex;
+          align-items: flex-start;
+          font-size: 16px;
+          color: $secondary-color;
+          /* Estilo para las estrellas */
+        }
+      }
+
+      &:hover {
+        transform: translateY(-10px);
+        /* Desplazamiento vertical cuando pasa el mouse */
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        /* Sombra más intensa en hover */
+      }
+    }
+  }
+}
+
+.divpages {
+  margin-top: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; // Espacio entre los botones de paginación
+
+  button {
+    background-color: transparent;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none; // Eliminar el borde
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; // Añadimos la transición para la sombra
+
+    &:hover {
+      background-color: #f3f3f3;
+      color: #317d24; // Cambia el color al pasar el mouse
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); // Sombra al pasar el mouse
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .material-symbols-outlined {
+    font-size: 18px;
+    color: #333;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #317d24; // Color cuando se pasa el mouse sobre las flechas
+    }
+  }
+
+  // Estilo para el botón de paginación activo
+  button.active {
+    background-color: #317d24;
+    color: white;
+
+    &:hover {
+      background-color: darken(#317d24, 10%);
+      color: white;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); // Añadimos sombra para el estado activo
+    }
+  }
+}
+
+// Landing Vendeturopa
+
+section {
+
+  .div1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+    margin-top: 100px;
+
+
+    .div1-a {
+      width: 50vw;
+      padding: 20px;
+
+      h1 {
+        font-family: $font-family-serif;
+        color: $secondary-color;
+        font-size: 50px;
+        font-weight: 300;
+        font-style: normal;
+        margin-bottom: 10px;
+        padding: 0 0 0 6vw;
+      }
+
+      h2 {
+        font-family: $font-family-serif;
+        font-size: 20px;
+        color: #666;
+        padding: 0 0 0 6vw;
+        margin-bottom: 0;
+      }
+    }
+
+    .div1-b {
+      width: 50vw;
+      padding: 0 6vw 0 0;
+      display: flex;
+      justify-content: center;
+
+      iframe {
+        width: 100%;
+        height: 400px;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+// Sección Traé tus prendas
+
+.traetusprearmadas {
+  background-color: $footer-bg;
+  color: white; // Texto blanco
+  padding: 150px 0;
+  margin-bottom: 10vh;
+
+  .div2 {
+    text-align: center;
+    margin-bottom: 50px;
+
+    h3 {
+      font-family: $font-family-main;
+      font-size: 50px;
+      color: $secondary-color;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+
+    }
+  }
+
+  .div3 {
+    display: flex;
+    gap: 20px; // Espacio entre las cards
+    justify-content: center; // Centra las cards
+    flex-wrap: wrap; // Hace que se acomoden si el tamaño de pantalla es pequeño
+
+    .div3-a,
+    .div3-b {
+      background-color: #fff; // Fondo blanco para las cards
+      color: #333; // Texto oscuro
+      padding: 20px;
+      border-radius: 10px;
+      width: 45%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      h4 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      // Animación al hacer hover
+      &:hover {
+        transform: translateY(-10px); // Desplazamiento hacia arriba
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Sombra más fuerte
+      }
+    }
+  }
+}
+
+// Sección Cómo es nuestro sistema
+
+section {
+  margin-bottom: 100px;
+
+  .div4 {
+    text-align: center;
+    margin-bottom: 50px;
+
+    h3 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+  }
+
+  .div4-a {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      transition: all 0.4s ease;
+      /* Transición suave para todos los ul */
+
+      li {
+        margin-bottom: 10px;
+        font-size: 16px;
+        position: relative;
+        opacity: 1;
+        padding: 10px;
+        transition: all 0.3s ease;
+        /* Transición suave para cada item */
+
+        /* Efecto por defecto */
+        &:not(:hover) {
+          opacity: 0.8;
+          /* Los elementos no seleccionados son un poco opacos */
+          transform: translateY(0);
+          /* Sin desplazamiento al principio */
+        }
+
+        /* Efecto hover */
+        &:hover {
+          transform: translateY(-10px);
+          /* Desliza el elemento hacia arriba */
+          opacity: 1;
+          /* El elemento en hover tiene opacidad total */
+          z-index: 1;
+          /* Asegura que el item hover quede encima de los otros */
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+          /* Sombra sutil para resaltar */
+          background-color: rgba(0, 0, 0, 0.1);
+          /* Color de fondo sutil al pasar el ratón */
+        }
+
+        /* Animación de color suave */
+        &:hover {
+          color: #317d24;
+          /* Cambia el color del texto en hover */
+        }
+
+        /* Para el resto de los items en hover (difuminados) */
+        &~li {
+          opacity: 0.5;
+          /* Los items que no están en hover se difuminan */
+          transform: translateY(0);
+          /* Sin desplazamiento en los demás */
+        }
+      }
+    }
+  }
+}
+
+// Landing sucursales
+
+main {
+  // Estilo general para la sección
+  background-color: #ffffff;
+
+
+  .portadasucursales {
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+
+    .imgportadasuc {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .h1sucursales {
+    position: absolute;
+    background-color: #000000bc;
+    top: 330px;
+    padding: 50px 50px 50px 200px;
+    border-radius: 20px;
+    margin-left: -40px;
+
+    h1 {
+      font-family: $font-family-serif;
+      font-size: 100px;
+      font-weight: 300;
+      font-style: normal;
+      color: $primary-color;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 300;
+      color: $primary-color;
+    }
+  }
+
+  // Estilo para las ubicaciones
+  .ubiform {
+    display: flex;
+    margin-bottom: 100px;
+
+    .ubicaciones {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      margin-left: 50px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; // Transición suave para todo el contenedor
+
+      // Animación al pasar el mouse
+      &:hover {
+        transform: scale(1.05) translateX(10%); // Agranda el contenedor y lo desplaza hacia el centro
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); // Sombra más pronunciada
+      }
+
+      .divubicacion {
+        display: flex;
+        align-items: center;
+        transition: transform 0.3s ease-in-out; // Transición suave para la animación del texto y el ícono
+
+        p {
+          font-size: 18px;
+          font-weight: 600;
+          margin-right: 10px;
+          margin-bottom: 0;
+        }
+
+        .material-symbols-outlined {
+          font-size: 30px;
+          color: $secondary-color; // Color verde para el ícono de ubicación
+          transition: transform 0.3s ease-in-out; // Transición para el icono también
+        }
+
+        // Agrandado del icono y texto cuando el mouse pasa sobre la ubicación
+        &:hover {
+          transform: scale(1.1); // Agranda el texto y el icono ligeramente
+        }
+      }
+
+      .direccion {
+        p {
+          font-size: 16px;
+          color: $footer-bg;
+        }
+      }
+    }
+
+    // Estilo para el formulario de contacto
+    .divformcont {
+      width: 30vw;
+      height: 45vh;
+      margin: 0 auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+
+      h5 {
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .mb-3 {
+        margin-bottom: 15px;
+
+        label {
+          font-size: 16px;
+          font-weight: 600;
+          color: #333;
+          margin-bottom: 8px;
+        }
+
+        .form-control {
+          width: 100%;
+          padding: 12px;
+          font-size: 14px;
+          border-radius: 8px;
+          border: 1px solid #ddd;
+          margin-top: 5px;
+
+          &:focus {
+            border-color: #4caf50;
+          }
+        }
+
+        textarea.form-control {
+          resize: vertical;
+        }
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken(#4caf50, 10%);
+        }
+      }
+    }
+  }
+}
+
+// MediasQuerys
+
+// --- Index ---
+.index {
+
+  // Sección de banner
+  .sectionbanner {
+    div h1 {
+      font-size: 4vw;
+      width: 50vw;
+    }
+    
+    div h2 {
+      top: 340px;
+      margin-left: 5%;
+      width: 45vw;
+    }
+
+    @media (max-width: 1460px) {
+      div h1 {
+        font-size: 40px;
+        width: 50vw;
+      }
+
+      div h2 {
+        top: 340px;
+        margin-left: 5%;
+        width: 45vw;
+      }
+
+      #contenedor-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 5vw 100px 5vw;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      div h1 {
+        font-size: 30px;
+        width: 40vw;
+      }
+
+      div h2 {
+        top: 270px;
+        margin-left: 5%;
+        width: 40vw;
+      }
+
+      #contenedor-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 5vw 100px 5vw;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      div h1 {
+        font-size: 30px;
+        width: 40vw;
+      }
+
+      div h2 {
+        top: 270px;
+        margin-left: 5%;
+        width: 40vw;
+      }
+      
+      .div1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .div1-a {
+        width: 100vw;
+      }
+
+      .div1-b {
+        width: 100vw;
+        margin-top: 50px;
+      }
+
+      .div2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5vw;
+      }
+
+      .traetusprearmadas h3 {
+        font-size: 45px;
+        padding: 0;
+        color: rgb(122, 197, 127);
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .sectionbanner div h1 {
+        font-size: 30px;
+        width: 40vw;
+      }
+
+      .sectionbanner div h2 {
+        top: 220px;
+        margin-left: 5%;
+        width: 40vw;
+      }
+
+      .suscripcion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 100px;
+      }
+
+      .textsuscripcion {
+        margin: 20px;
+        padding: 1vw;
+      }
+    }
+    
+    // Continúa con las demás media queries para tamaños menores
+
+  }
+
+  // Cards
+  .texto-descuentos-vertodo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 7vw 0.7vh 7vw;
+    font-size: 1.5rem;
+  }
+
+  .vertodo {
+    border: 1px solid #333;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 870px) {
+    .sectionbanner div h1 {
+      font-size: 1.5rem !important;
+      top: 190px;
+      width: 40vw;
+    }
+
+    .sectionbanner div h2 {
+      font-size: 0.8rem !important;
+      top: 240px;
+      margin-left: 5%;
+      width: 40vw;
+    }
+
+    .texto-descuentos-vertodo {
+      font-size: 1rem;
+    }
+
+    .vertodo {
+      font-size: 10px;
+    }
+  }
+}
+
+// --- Landing Mujer ---
+.landing-mujer {
+  // Sección filtros y categorías
+  .divizq {
+    flex: 1 1 25%;
+    padding: 20px;
+    box-sizing: border-box;
+
+    .titfiltros {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .gencategorias {
+      .titcat {
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      div {
+        margin-bottom: 15px;
+
+        label {
+          font-size: 14px;
+        }
+
+        input[type="checkbox"] {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .divder {
+    flex: 1 1 75%;
+    padding: 20px;
+    box-sizing: border-box;
+
+    #contenedor-cards-mujer {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-content: space-evenly;
+
+      .cards {
+        background-color: $primary-color;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        .heart {
+          transform: scale(1.5);
+          position: absolute;
+          top: 30px;
+          left: 30px;
+          background-color: #ffffff;
+          border-radius: 20px;
+        }
+
+        .cardbot {
+          display: flex;
+          justify-content: space-around;
+
+          .starpoint {
+            display: flex;
+            align-items: flex-start;
+          }
+        }
+      }
+
+      // Responsive adjustments
+      @media (max-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr); // 3 cards per row on tablets
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr); // 2 cards per row on mobile
+      }
+
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr; // 1 card per row on small screens
+      }
+    }
+  }
+}
+
+// --- Landing Sucursales ---
+.landing-sucursales {
+  .portadasucursales {
+    width: 100%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .h1sucursales {
+    h1 {
+      font-size: 3vw;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.5vw;
+      text-align: center;
+    }
+  }
+
+  .ubicaciones {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .divubicacion {
+      display: flex;
+      align-items: center;
+
+      p {
+        font-size: 18px;
+        font-weight: 600;
+        margin-right: 10px;
+      }
+
+      .material-symbols-outlined {
+        font-size: 30px;
+        color: #4caf50;
+      }
+    }
+
+    .direccion {
+      p {
+        font-size: 16px;
+        color: #555;
+      }
+    }
+  }
+
+  .divformcont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .form-label {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .form-control {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+      background-color: #317d24;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(#317d24, 10%);
+      }
+    }
+  }
+}
+
+
+
