@@ -217,11 +217,11 @@ header {
     left: 150px;
     z-index: 1000;
     color: white;
-    font-size: 20px;
     font-weight: 200;
     margin-top: 10px;
     margin-left: 50px;
     width: 800px;
+
   }
 
   div h1 {
@@ -236,7 +236,7 @@ header {
 
   div h2 {
     color: white;
-    font-size: 25px;
+    font-size: 1.1vw;
     font-weight: 200;
     margin-top: 12vh;
     margin-left: 5%;
@@ -376,49 +376,77 @@ header {
   }
 
   #contenedor-cards {
+    margin-top: 2vh;
 
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 2vh 2vw 2vh 2vw;
-    box-sizing: border-box; // Incluir padding dentro del tamaño del contenedor
-
-
-    .cards {
+    .card {
+      border: none;
       background-color: $primary-color;
       border-radius: 10px;
       display: flex;
       flex-direction: column;
       position: relative;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      /* Animación de transformación y sombra */
+      transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
 
-      /* Animación hover - elevar la card */
       &:hover {
-        transform: translateY(-5px);
-        /* Eleva la card */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        /* Aumenta la sombra al hacer hover */
+        transform: scale(1.05); // Aumenta el tamaño de la card al pasar el mouse
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); // Sombra más grande al pasar el mouse
       }
 
       .heart {
-        transform: scale(1.5);
         position: absolute;
-        top: 30px;
-        left: 30px;
+        top: 10px;
+        left: 10px;
         background-color: #ffffff;
-        border-radius: 20px;
+        border-radius: 50%;
+        padding: 10px;
+        font-size: 1.5rem;
+        color: #f44336; // Rojo para el corazón
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #d32f2f; // Rojo oscuro al pasar el mouse
+        }
+      }
+
+      .imgcard {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        object-fit: cover; // Mantiene la proporción de la imagen
+        height: 200px; // Ajusta el alto según sea necesario
       }
 
       .cardbot {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 0 0 10px 10px;
 
         .starpoint {
           display: flex;
-          align-items: flex-start;
+          align-items: center;
+          font-size: 1.2rem;
+
+          .material-symbols-outlined {
+            color: #ffd700; // Color dorado para las estrellas
+          }
+
+          .starpoint {
+            margin-left: 5px;
+          }
+        }
+
+        p {
+          font-size: 1rem;
+          color: #333;
+        }
+
+        .text-muted {
+          font-size: 1rem;
+          color: #999;
+          text-decoration: line-through;
         }
       }
     }
@@ -526,7 +554,6 @@ header {
   font-size: 20px;
   margin-left: 2vw;
 
-
   p {
     color: $text-color;
     margin-bottom: 0;
@@ -541,9 +568,8 @@ header {
 
 .cantproductosgen {
   margin: 0 35px;
-  background-color: #eaeaea;
+  background-color: $primary-color;
   margin-bottom: 50px;
-  border: 2px solid rgb(223, 223, 223);
   border-radius: 15px;
 
   .cantproductos {
@@ -551,7 +577,6 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 5px 20px;
-
 
     p {
       font-size: 16px;
@@ -592,11 +617,7 @@ header {
   padding: 20px;
 
   .divizq {
-    flex: 1 1 10%;
-    /* Ocupa el 10% del ancho de la pantalla */
     padding: 20px;
-    box-sizing: border-box;
-    opacity: 0;
     /* Inicialmente oculta para la animación */
     transform: translateX(-50px);
     /* Empuja el contenido hacia la izquierda */
@@ -680,20 +701,11 @@ header {
   }
 
   .divder {
-    flex: 1 1 80%;
-    /* Ocupa el 80% del ancho de la pantalla */
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 
-    #contenedor-cards-mujer {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      /* 5 cards por fila */
-      gap: 20px;
-      width: 100%;
-      padding: 0;
-    }
-
-    .cards {
+    .card {
+      border: none;
       background-color: #f3f3f3;
       /* Fondo claro para las cards */
       border-radius: 10px;
@@ -705,16 +717,27 @@ header {
       padding: 15px;
       position: relative;
 
+      p {
+        margin: 0;
+        padding: 0.3rem;
+      }
+
       .heart {
-        background: #ffffff;
-        position: absolute;
-        top: 1vw;
-        left: 1vw;
-        border-radius: 2vw;
-        padding: 0.2vw;
+        background-color: $primary-color;
+        border-radius: 50%;
+        padding: 10px;
+
+        color: #f44336; // Rojo para el corazón
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #d32f2f; // Rojo oscuro al pasar el mouse
+        }
       }
 
       .imgcard {
+        margin-top: 3vh;
         width: 100%;
         height: 200px;
         object-fit: cover;
@@ -752,66 +775,59 @@ header {
 }
 
 .divpages {
-  margin-top: 5vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px; // Espacio entre los botones de paginación
 
-  button {
-    background-color: transparent;
-    padding: 10px 15px;
-    font-size: 14px;
-    color: #333;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none; // Eliminar el borde
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; // Añadimos la transición para la sombra
-
-    &:hover {
-      background-color: #f3f3f3;
-      color: #317d24; // Cambia el color al pasar el mouse
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); // Sombra al pasar el mouse
-    }
-
-    p {
-      margin: 0;
-      font-size: 14px;
-      font-weight: bold;
-    }
-  }
-
-  p {
-    margin: 0;
-    font-size: 14px;
-    color: #333;
-    display: flex;
-    align-items: center;
+  nav {
     justify-content: center;
   }
 
-  .material-symbols-outlined {
-    font-size: 18px;
-    color: #333;
-    transition: color 0.3s;
+  .pagination {
+    gap: 10px;
 
-    &:hover {
-      color: #317d24; // Color cuando se pasa el mouse sobre las flechas
+    .page-item {
+      background-color: transparent;
+      border: none;
+
+      &.disabled .page-link {
+        pointer-events: none;
+        opacity: 0.5;
+      }
+
+      .page-link {
+        padding: 10px 15px;
+        font-size: 14px;
+        color: #333;
+        background-color: transparent;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+
+        &:hover {
+          background-color: #f3f3f3;
+          color: #317d24; // Cambia el color al pasar el mouse
+        }
+      }
+
+      &.active .page-link {
+        background-color: #317d24;
+        color: white;
+        border: 1px solid #317d24;
+
+        &:hover {
+          background-color: darken(#317d24, 10%);
+          color: white;
+        }
+      }
     }
-  }
 
-  // Estilo para el botón de paginación activo
-  button.active {
-    background-color: #317d24;
-    color: white;
+    .material-symbols-outlined {
+      font-size: 18px;
+      color: #333;
+      transition: color 0.3s;
 
-    &:hover {
-      background-color: darken(#317d24, 10%);
-      color: white;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); // Añadimos sombra para el estado activo
+      &:hover {
+        color: #317d24; // Color cuando se pasa el mouse sobre las flechas
+      }
     }
   }
 }
@@ -1177,361 +1193,330 @@ main {
   }
 }
 
+
+
 // MediasQuerys
 
-// --- Index ---
-.index {
+@media (max-width: 1024px) {
+  /* Pantallas pequeñas de escritorio / laptops - Ajustes específicos */
+  // Main Section Styles
 
-  // Sección de banner
   .sectionbanner {
-    div h1 {
-      font-size: 4vw;
-      width: 50vw;
-    }
-    
-    div h2 {
-      top: 340px;
-      margin-left: 5%;
-      width: 45vw;
-    }
+    margin: 0;
 
-    @media (max-width: 1460px) {
-      div h1 {
-        font-size: 40px;
-        width: 50vw;
-      }
-
-      div h2 {
-        top: 340px;
-        margin-left: 5%;
-        width: 45vw;
-      }
-
-      #contenedor-cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        padding: 0 5vw 100px 5vw;
-      }
-    }
-
-    @media (max-width: 1200px) {
-      div h1 {
-        font-size: 30px;
-        width: 40vw;
-      }
-
-      div h2 {
-        top: 270px;
-        margin-left: 5%;
-        width: 40vw;
-      }
-
-      #contenedor-cards {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 5vw 100px 5vw;
-      }
-    }
-
-    @media (max-width: 1024px) {
-      div h1 {
-        font-size: 30px;
-        width: 40vw;
-      }
-
-      div h2 {
-        top: 270px;
-        margin-left: 5%;
-        width: 40vw;
-      }
-      
-      .div1 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .div1-a {
-        width: 100vw;
-      }
-
-      .div1-b {
-        width: 100vw;
-        margin-top: 50px;
-      }
-
-      .div2 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0 5vw;
-      }
-
-      .traetusprearmadas h3 {
-        font-size: 45px;
-        padding: 0;
-        color: rgb(122, 197, 127);
-      }
-    }
-
-    @media (max-width: 1000px) {
-      .sectionbanner div h1 {
-        font-size: 30px;
-        width: 40vw;
-      }
-
-      .sectionbanner div h2 {
-        top: 220px;
-        margin-left: 5%;
-        width: 40vw;
-      }
-
-      .suscripcion {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 100px;
-      }
-
-      .textsuscripcion {
-        margin: 20px;
-        padding: 1vw;
-      }
-    }
-    
-    // Continúa con las demás media queries para tamaños menores
-
-  }
-
-  // Cards
-  .texto-descuentos-vertodo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 7vw 0.7vh 7vw;
-    font-size: 1.5rem;
-  }
-
-  .vertodo {
-    border: 1px solid #333;
-    cursor: pointer;
-    font-size: 12px;
-    padding: 10px;
-    border-radius: 10px;
-  }
-
-  @media (max-width: 870px) {
-    .sectionbanner div h1 {
-      font-size: 1.5rem !important;
-      top: 190px;
-      width: 40vw;
-    }
-
-    .sectionbanner div h2 {
-      font-size: 0.8rem !important;
-      top: 240px;
-      margin-left: 5%;
-      width: 40vw;
-    }
-
-    .texto-descuentos-vertodo {
-      font-size: 1rem;
-    }
-
-    .vertodo {
-      font-size: 10px;
-    }
-  }
-}
-
-// --- Landing Mujer ---
-.landing-mujer {
-  // Sección filtros y categorías
-  .divizq {
-    flex: 1 1 25%;
-    padding: 20px;
-    box-sizing: border-box;
-
-    .titfiltros {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .gencategorias {
-      .titcat {
-        font-weight: 600;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        font-size: 16px;
-      }
-
-      p {
-        font-size: 14px;
-        margin-bottom: 10px;
-      }
-
-      div {
-        margin-bottom: 15px;
-
-        label {
-          font-size: 14px;
-        }
-
-        input[type="checkbox"] {
-          margin-right: 10px;
-        }
-      }
-    }
-  }
-
-  .divder {
-    flex: 1 1 75%;
-    padding: 20px;
-    box-sizing: border-box;
-
-    #contenedor-cards-mujer {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      justify-content: space-evenly;
-
-      .cards {
-        background-color: $primary-color;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-        .heart {
-          transform: scale(1.5);
-          position: absolute;
-          top: 30px;
-          left: 30px;
-          background-color: #ffffff;
-          border-radius: 20px;
-        }
-
-        .cardbot {
-          display: flex;
-          justify-content: space-around;
-
-          .starpoint {
-            display: flex;
-            align-items: flex-start;
-          }
-        }
-      }
-
-      // Responsive adjustments
-      @media (max-width: 1024px) {
-        grid-template-columns: repeat(3, 1fr); // 3 cards per row on tablets
-      }
-
-      @media (max-width: 768px) {
-        grid-template-columns: repeat(2, 1fr); // 2 cards per row on mobile
-      }
-
-      @media (max-width: 480px) {
-        grid-template-columns: 1fr; // 1 card per row on small screens
-      }
-    }
-  }
-}
-
-// --- Landing Sucursales ---
-.landing-sucursales {
-  .portadasucursales {
-    width: 100%;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .h1sucursales {
     h1 {
-      font-size: 3vw;
-      text-align: center;
+      top: 100px;
+      left: 140px;
     }
 
     h2 {
-      font-size: 1.5vw;
-      text-align: center;
+
+      top: 150px;
+      left: 140px;
+      margin-top: 10px;
+      margin-left: 50px;
+      width: 800px;
+
+    }
+
+    div h1 {
+      font-size: 4vw;
+
+      margin-left: 5%;
+      width: 50vw;
+    }
+
+    div h2 {
+      font-size: 1.1vw;
+      font-weight: 200;
+      margin-top: 12vh;
+      margin-left: 5%;
+      width: 45vw;
     }
   }
 
-  .ubicaciones {
+  .beneficios {
     display: flex;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    margin-left: 50px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2vw;
+    gap: 20px; // Espacio entre los elementos de beneficios
+    padding: 20px; // Espaciado dentro de la sección
 
-    .divubicacion {
-      display: flex;
-      align-items: center;
+  }
 
-      p {
-        font-size: 18px;
-        font-weight: 600;
-        margin-right: 10px;
-      }
+  // Estilo para cada beneficio dentro de la sección
+  .beneficio {
+    width: 220px; // Ancho fijo para los beneficios
+    padding: 1vw;
 
-      .material-symbols-outlined {
-        font-size: 30px;
-        color: #4caf50;
-      }
+  }
+
+  .iconbeneficios {
+    transform: scale(1);
+  }
+
+  h3 {
+    font-size: 2vw;
+    margin-bottom: 0;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  /* Tabletas - Ajustes específicos */
+  .sectionbanner {
+    margin-bottom: 0;
+
+    h1 {
+      top: 100px;
+      left: 70px;
     }
 
-    .direccion {
-      p {
-        font-size: 16px;
-        color: #555;
-      }
+    h2 {
+      top: 90px;
+      left: 70px;
+      margin-top: 10px;
+      margin-left: 50px;
+      width: 800px;
+    }
+
+    div h1 {
+      font-size: 4vw;
+
+      margin-left: 5%;
+      width: 50vw;
+    }
+
+    div h2 {
+      font-size: 1.1vw;
+      font-weight: 200;
+      margin-top: 12vh;
+      margin-left: 5%;
+      width: 45vw;
     }
   }
 
-  .divformcont {
+  .beneficios {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin: 2vw;
+    gap: 20px; // Espacio entre los elementos de beneficios
+    padding: 20px; // Espaciado dentro de la sección
+  }
 
-    .form-label {
-      font-size: 14px;
-      margin-bottom: 5px;
-    }
+  // Estilo para cada beneficio dentro de la sección
+  .beneficio {
+    width: 180px; // Ancho fijo para los beneficios
+    padding: 1vw;
+  }
 
-    .form-control {
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
+  .iconbeneficios {
+    transform: scale(1);
+  }
 
-    input[type="submit"] {
-      background-color: #317d24;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: darken(#317d24, 10%);
-      }
-    }
+  h3 {
+    font-size: 2vw;
+    margin-bottom: 0;
   }
 }
 
+@media (max-width: 480px) {
 
+  /* Móviles - Ajustes específicos */
+  .sectionbanner {
+    margin-bottom: 0;
 
+    h1 {
+      top: 50px;
+      left: 50px;
+    }
+
+    h2 {
+      top: 0;
+      left: 50px;
+    }
+
+    div h1 {
+      font-size: 4vw;
+      margin-left: 5%;
+      width: 50vw;
+    }
+
+    div h2 {
+      font-size: 1.1vw;
+      font-weight: 200;
+      margin-top: 12vh;
+      margin-left: 5%;
+      width: 45vw;
+    }
+  }
+
+  .beneficios {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 20px; // Espacio entre los elementos de beneficios
+    padding: 20px; // Espaciado dentro de la sección
+  }
+
+  // Estilo para cada beneficio dentro de la sección
+  .beneficio {
+    width: 150px; // Ancho fijo para los beneficios
+    padding: 1vw;
+  }
+
+  .iconbeneficios {
+    transform: scale(1);
+  }
+
+  h3 {
+    font-size: 2vw;
+    margin-bottom: 0;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0; // Espaciado superior e inferior
+
+    .imglaura1 {
+      width: 120px;
+      margin-bottom: 5vw;
+    }
+
+    .conttextfooter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px; // Espaciado entre cada sección
+    }
+
+  }
+
+  section {
+
+    .div1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20vw;
+      margin-top: 2vh;
+
+      .div1-a {
+        padding: 10vw;
+        width: 100vw;
+
+        h1 {
+          font-size: 2rem;
+          margin-bottom: 10px;
+        }
+
+        h2 {
+          font-size: 1rem;
+          color: #666;
+          margin-bottom: 0;
+        }
+      }
+
+      .div1-b {
+        width: 90vw;
+        padding: 0 6vw 0 0;
+      }
+    }
+  }
+
+  main {
+    .h1sucursales {
+      position: absolute;
+      background-color: #303030bc;
+      top: 10vh;
+      width: 70vw;
+      height: 4vh;
+
+      h1 {
+        font-size: 10vw;
+        position: absolute;
+        left: 20vw;
+        top: 1vh;
+      }
+
+      h2 {
+        font-size: 3vw;
+        position: absolute;
+        left: 20vw;
+        top: 7vh;
+      }
+    }
+  }
+
+  main {
+
+    .ubiform {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 100px;
+
+      .ubicaciones {
+        width: 70vw;
+      }
+
+      // Estilo para el formulario de contacto
+      .divformcont {
+        width: 80vw;
+        height: 45vh;
+        padding: 30px;
+      }
+    }
+
+    // Sección Suscripción
+    .suscripcion {
+
+      .entradatsuscripcion {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+
+  .opciones {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+  
+    .pad-top {
+      margin-top: 100px;
+    }
+  }
+  
+  .categorias {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    transition: transform 0.5s ease-in-out;
+    /* Transición para el movimiento suave */
+    transform: translateY(20px);
+    /* Empieza ligeramente hacia abajo */
+  
+    &:hover {
+      transform: translateY(0);
+      /* Se mueve a su posición original al pasar el ratón */
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+      /* Transición para el efecto de imagen */
+    }
+
+  }
+}
